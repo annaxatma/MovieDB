@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.moviedb.R;
+import com.example.moviedb.helper.Const;
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.viewmodel.MovieViewModel;
 import com.google.android.material.textfield.TextInputLayout;
@@ -54,12 +55,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onChanged(Movies movies) {
             if(movies == null){
-                txt_show.setText("Movie ID is ot available in movieDB");
+                txt_show.setText("Movie ID is not available in movieDB");
             }else{
                 String title = movies.getTitle();
-                String img_path = movies.getPoster_path().toString();
-                String full_path = "https://image.tmdb.org/t/p/w500/" + img_path;
-                Glide.with(MainActivity.this).load(full_path).into(img_poster);
+                String img_path = Const.IMG_URL + movies.getPoster_path().toString();
+                Glide.with(MainActivity.this).load(img_path).into(img_poster);
                 txt_show.setText(title);
             }
         }

@@ -47,7 +47,7 @@
     <ImageView
         android:id="@+id/img_poster_main"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_show"
         app:layout_constraintEnd_toEndOf="parent"
