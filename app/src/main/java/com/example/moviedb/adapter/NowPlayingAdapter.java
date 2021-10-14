@@ -60,6 +60,8 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Ca
                 intent.putExtra("movie_title", ""+results.getTitle());
                 intent.putExtra("movie_synopsis", ""+results.getOverview());
                 intent.putExtra("movie_rating", ""+results.getVote_average());
+                intent.putExtra("movie_poster", ""+results.getPoster_path());
+                intent.putExtra("movie_adult", ""+results.isAdult());
                 intent.putExtra("movie_releasedate", ""+results.getRelease_date());
                 context.startActivity(intent);
             }

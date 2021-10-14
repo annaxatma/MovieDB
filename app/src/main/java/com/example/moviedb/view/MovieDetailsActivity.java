@@ -24,8 +24,8 @@ import com.example.moviedb.viewmodel.MovieViewModel;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
-    private TextView lbl_id, lbl_synopsis, movie_synopsis_text, tv_rating_movie_detail, tv_releasedate_movie_detail;
-    private String movie_id, movie_title, movie_synopsis, movie_rating, movie_releasedate = "";
+    private TextView lbl_id, lbl_synopsis, movie_synopsis_text, tv_rating_movie_detail, tv_releasedate_movie_detail, tv_adult_movie_detail;
+    private String movie_id, movie_title, movie_synopsis, movie_rating, movie_releasedate, movie_adult = "";
     private ImageView img_poster, img_rating;
     private Toolbar toolbar;
     private MovieViewModel model;
@@ -42,6 +42,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         img_rating = findViewById(R.id.img_rating);
         tv_rating_movie_detail = findViewById(R.id.tv_rating_movie_detail);
         tv_releasedate_movie_detail = findViewById(R.id.tv_releasedate_movie_detail);
+        tv_adult_movie_detail = findViewById(R.id.tv_adult_movie_detail);
 
         Intent intent = getIntent();
         movie_id = intent.getStringExtra("movie_id");
@@ -49,6 +50,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         movie_synopsis = intent.getStringExtra("movie_synopsis");
         movie_rating = intent.getStringExtra("movie_rating");
         movie_releasedate = intent.getStringExtra("movie_releasedate");
+        movie_adult = intent.getStringExtra("movie_adult");
 
         toolbar = findViewById(R.id.tb_movie_details);
             setSupportActionBar(toolbar);
@@ -59,6 +61,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
         lbl_id.setText(movie_id);
         tv_rating_movie_detail.setText(movie_rating);
         tv_releasedate_movie_detail.setText(movie_releasedate);
+        if (movie_adult != "false") {
+            tv_adult_movie_detail.setText("Only Certain Age Above");
+        }else{
+            tv_adult_movie_detail.setText("All Audience");
+        }
 
         model = new ViewModelProvider(MovieDetailsActivity.this).get(MovieViewModel.class);
         model.getMovieDetail();
