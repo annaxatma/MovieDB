@@ -60,21 +60,21 @@ public class MovieRepository {
         return result;
     }
 
-    public MutableLiveData<Movies> getMovieDetailData(){
-        final MutableLiveData<Movies> result = new MutableLiveData<>();
-
-        ApiService.endPoint().getMovieDetail(Const.API_KEY).enqueue(new Callback<Movies>(){
-            @Override
-            public void onResponse(Call<Movies> call, Response<Movies> response) {
-                result.setValue(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<Movies> call, Throwable t) {
-
-            }
-        });
-
-        return result;
-    }
+//    public MutableLiveData<Movies> getMovieDetailData(){
+//        final MutableLiveData<Movies> result = new MutableLiveData<>();
+//
+//        ApiService.endPoint().getMovieDetail(Const.API_KEY).enqueue(new Callback<Movies>(){
+//            @Override
+//            public void onResponse(Call<Movies> call, Response<Movies> response) {
+//                result.setValue(response.body());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Movies> call, Throwable t) {
+//
+//            }
+//        });
+//
+//        return result;
+//    }
 }

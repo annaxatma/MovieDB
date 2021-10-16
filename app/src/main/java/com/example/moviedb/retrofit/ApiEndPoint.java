@@ -21,9 +21,9 @@ public interface ApiEndPoint {
             @Query("api_key") String apiKey
     );
 
-    @GET("movie/{movie_id}/images")
-    Call<Movies> getMovieDetail(
-            @Query("api_key") String apiKey
-    );
+//    @GET("movie/{movie_id}/images")
+//    Call<Movies> getMovieDetail(
+//            @Query("api_key") String apiKey
+//    );
 
 }

@@ -44,15 +44,15 @@ public class MovieViewModel extends AndroidViewModel {
     }
     //end of viewmodel getNowPlaying
 
-    //begin of viewmodel getMovieDetail
-    private MutableLiveData<Movies> resultGetMovieDetail = new MutableLiveData<>();
-
-    public void getMovieDetail(){
-        resultGetMovieDetail = repository.getMovieDetailData();
-    }
-
-    public LiveData<Movies> getResultMovieDetail(){
-        return resultGetMovieDetail;
-    }
-    //end of viewmodel getMovieDetail
+//    //begin of viewmodel getMovieDetail
+//    private MutableLiveData<Movies> resultGetMovieDetail = new MutableLiveData<>();
+//
+//    public void getMovieDetail(){
+//        resultGetMovieDetail = repository.getMovieDetailData();
+//    }
+//
+//    public LiveData<Movies> getResultMovieDetail(){
+//        return resultGetMovieDetail;
+//    }
+//    //end of viewmodel getMovieDetail
 }

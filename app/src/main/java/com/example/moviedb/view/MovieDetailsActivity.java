@@ -68,8 +68,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         }
 
         model = new ViewModelProvider(MovieDetailsActivity.this).get(MovieViewModel.class);
-        model.getMovieDetail();
-        //model.getResultMovieDetail().observe(MovieDetailsActivity.this, showMoviePoster);
+        model.getMovieById(movie_id);
+        model.getResultGetMovieById().observe(MovieDetailsActivity.this, showMoviePoster);
     }
 
     private Observer<Movies> showMoviePoster = new Observer<Movies>() {
@@ -77,8 +77,9 @@ public class MovieDetailsActivity extends AppCompatActivity {
         public void onChanged(Movies movies) {
             String poster_path = movies.getPoster_path().toString();
             if(!(poster_path == null)) {
-                String movie_poster = Const.IMG_URL + poster_path;
+                String movie_poster = Const.IMG_URL + movies.getPoster_path();
                 Glide.with(MovieDetailsActivity.this).load(movie_poster).into(img_poster);
+
             }
         }
     };
