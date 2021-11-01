@@ -2,20 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cons_card_nowplaying"
+    android:id="@+id/cons_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/black">
+    android:background="#6B5E58">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_card_nowplaying"
+        android:id="@+id/cv_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="4dp"
-        app:cardBackgroundColor="#000000"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,13 +22,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cons_cv_card_nowplaying"
+            android:id="@+id/cons_cv_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/card_bg_nowplaying">
+            android:background="#BDA28D">
 
             <ImageView
-                android:id="@+id/img_poster_card_nowplaying"
+                android:id="@+id/img_poster_card"
                 android:layout_width="110dp"
                 android:layout_height="150dp"
                 android:layout_marginStart="16dp"
@@ -42,7 +41,7 @@
                 app:srcCompat="@android:drawable/ic_menu_report_image" />
 
             <TextView
-                android:id="@+id/lbl_title_card_nowplaying"
+                android:id="@+id/lbl_title_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -50,35 +49,35 @@
                 android:layout_marginEnd="8dp"
                 android:maxLines="2"
                 android:text="@string/title"
-                android:textColor="@color/gold"
+                android:textColor="#F6A975"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/img_poster_card_nowplaying"
-                app:layout_constraintTop_toTopOf="@+id/img_poster_card_nowplaying" />
+                app:layout_constraintStart_toEndOf="@+id/img_poster_card"
+                app:layout_constraintTop_toTopOf="@+id/img_poster_card" />
 
             <TextView
-                android:id="@+id/lbl_overview_card_nowplaying"
+                android:id="@+id/lbl_overview_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:maxLines="5"
                 android:text="@string/subtitle"
-                android:textColor="@color/silver"
-                app:layout_constraintEnd_toEndOf="@+id/lbl_title_card_nowplaying"
-                app:layout_constraintStart_toStartOf="@+id/lbl_title_card_nowplaying"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_title_card_nowplaying" />
+                android:textColor="#F7FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/lbl_title_card"
+                app:layout_constraintStart_toStartOf="@+id/lbl_title_card"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title_card" />
 
             <TextView
-                android:id="@+id/lbl_releasedate_card_nowplaying"
+                android:id="@+id/lbl_releasedate_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/releasedate"
-                android:textColor="@color/dark_silver"
+                android:textColor="#6B5E5B"
                 android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_poster_card_nowplaying"
-                app:layout_constraintEnd_toEndOf="@+id/lbl_overview_card_nowplaying"
-                app:layout_constraintStart_toStartOf="@+id/lbl_overview_card_nowplaying" />
+                app:layout_constraintBottom_toBottomOf="@+id/img_poster_card"
+                app:layout_constraintEnd_toEndOf="@+id/lbl_overview_card"
+                app:layout_constraintStart_toStartOf="@+id/lbl_overview_card" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

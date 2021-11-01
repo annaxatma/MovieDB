@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.moviedb.helper.Const;
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.model.NowPlaying;
+import com.example.moviedb.model.UpComing;
 import com.example.moviedb.retrofit.ApiService;
 
 import retrofit2.Call;
@@ -24,6 +25,8 @@ public class MovieRepository {
         }return repository;
     }
 
+    //start repository for id
+
     public MutableLiveData<Movies> getMovieData(String movieId){
         final MutableLiveData<Movies> result = new MutableLiveData<>();
 
@@ -41,6 +44,10 @@ public class MovieRepository {
 
         return result;
     }
+
+    //end repository for id
+
+    //start repository for now playing
 
     public MutableLiveData<NowPlaying> getNowPlayingData(){
         final MutableLiveData<NowPlaying> result = new MutableLiveData<>();
@@ -60,21 +67,27 @@ public class MovieRepository {
         return result;
     }
 
-//    public MutableLiveData<Movies> getMovieDetailData(){
-//        final MutableLiveData<Movies> result = new MutableLiveData<>();
-//
-//        ApiService.endPoint().getMovieDetail(Const.API_KEY).enqueue(new Callback<Movies>(){
-//            @Override
-//            public void onResponse(Call<Movies> call, Response<Movies> response) {
-//                result.setValue(response.body());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Movies> call, Throwable t) {
-//
-//            }
-//        });
-//
-//        return result;
-//    }
+    //end repository for now playing
+
+    //start repository for up coming
+
+    public MutableLiveData<UpComing> getUpComingData(){
+        final MutableLiveData<UpComing> result = new MutableLiveData<>();
+
+        ApiService.endPoint().getUpComing(Const.API_KEY).enqueue(new Callback<UpComing>() {
+            @Override
+            public void onResponse(Call<UpComing> call, Response<UpComing> response) {
+                result.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<UpComing> call, Throwable t) {
+
+            }
+        });
+
+        return result;
+    }
+
+    //end repository for up coming
 }

@@ -8,4 +8,14 @@
     <string name="releasedate">Release Date</string>
     <string name="synopsis">Synopsis</string>
     <string name="status">Rated</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="up_coming">Up Coming</string>
+    <string name="movie_details">Movie Details</string>
+    <string name="production_companies">Production Companies</string>
+    <string name="genre">Genre</string>
+    <string name="avg_vote">Avg. Vote</string>
+    <string name="popularity">Popularity</string>
+    <string name="tagline">Tagline</string>
 </resources>

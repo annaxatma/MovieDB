@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#222222"
-    tools:context=".view.MovieDetailsActivity">
+    tools:context=".view.activities.MovieDetailsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_movie_details"

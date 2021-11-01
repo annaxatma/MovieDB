@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.model.NowPlaying;
+import com.example.moviedb.model.UpComing;
 import com.example.moviedb.repositories.MovieRepository;
 
 public class MovieViewModel extends AndroidViewModel {
@@ -23,14 +24,13 @@ public class MovieViewModel extends AndroidViewModel {
     //begin of viewmodel get movie by id
     private MutableLiveData<Movies> resultGetMovieById = new MutableLiveData<>();
 
-    public void getMovieById(String movieId){
-        resultGetMovieById = repository.getMovieData(movieId);
-    }
+    public void getMovieById(String movieId){ resultGetMovieById = repository.getMovieData(movieId); }
 
     public LiveData<Movies> getResultGetMovieById(){
         return resultGetMovieById;
     }
     //end of viewmodel get movie by id
+
 
     //begin of viewmodel getNowPlaying
     private MutableLiveData<NowPlaying> resultGetNowPlaying = new MutableLiveData<>();
@@ -44,15 +44,14 @@ public class MovieViewModel extends AndroidViewModel {
     }
     //end of viewmodel getNowPlaying
 
-//    //begin of viewmodel getMovieDetail
-//    private MutableLiveData<Movies> resultGetMovieDetail = new MutableLiveData<>();
-//
-//    public void getMovieDetail(){
-//        resultGetMovieDetail = repository.getMovieDetailData();
-//    }
-//
-//    public LiveData<Movies> getResultMovieDetail(){
-//        return resultGetMovieDetail;
-//    }
-//    //end of viewmodel getMovieDetail
+
+    //begin of viewmodel getUpComing
+    private MutableLiveData<UpComing> resultGetUpComing = new MutableLiveData<>();
+
+    public void getUpComing(){ resultGetUpComing = repository.getUpComingData(); }
+
+    public LiveData<UpComing> getResultUpComing(){
+        return resultGetUpComing;
+    }
+    //end of viewmodel getUpComing
 }
